@@ -1,0 +1,38 @@
+
+<addflowerScreen>:
+    canvas.before:
+        Color:
+            rgba: root.bg_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+
+        Header:
+            size_hint: 1, 0.1
+            Label:
+                text: "Twoje rosliny"
+                size_hint: 8, 1
+                color: 1, 1, 1, 1
+                font_name: "font.ttf"
+                font_size: 24
+            MenuButton:
+                text: 'Menu'
+                color: 0.55, 0.36, 0.29, 1 
+                font_name: "font.ttf"
+
+                size_hint: 2,1
+                
+
+                on_press: root.go_to_menu_screen(self)
+        
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+
+            BoxLayout:
+                padding: 10
+                orientation: 'vertical'
+                hint_size: 1, 1
+                id: plants

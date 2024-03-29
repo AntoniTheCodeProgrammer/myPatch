@@ -1,0 +1,100 @@
+<PlantGridLayout@GridLayout>:
+    background_color: 0,0,0,0
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10, 10, 10, 10]
+
+<MenuButton@Button>:
+    background_color: 0,0,0,0
+    canvas.before:
+        Color:
+            rgba: (0.96, 0.84, 0.73, 1)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+
+            radius: [5]
+            
+
+<Header@BoxLayout>:
+    background_color: 0,0,0,0
+    padding: 10
+    canvas.before:
+        Color:
+            rgba: (0.4157, 0.5529, 0.4510, 1)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [0, 0, 10, 10]
+
+<mainScreen>:
+    canvas.before:
+        Color:
+            rgba: root.bg_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+
+        Header:
+            size_hint: 1, 0.1
+            Label:
+                id: welcome_label
+                size_hint: 4.5, 1
+                color: 1, 1, 1, 1
+                font_name: "font.ttf"
+                font_size: 24
+            MenuButton:
+                text: 'Menu'
+                color: 0.55, 0.36, 0.29, 1 
+                font_name: "font.ttf"
+
+                on_press: root.go_to_menu_screen(self)
+   
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+
+            Label:
+                text: "Twoje roslinki"
+                size_hint: 1, 0.05
+                
+                color: 0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0
+                font_name: "font.ttf"
+                font_size: 20
+                
+            
+
+            GridLayout:
+                padding: 10
+                cols: 2
+                hint_size: 1, 1
+                id: plants_layout
+
+            Label:
+                text: "Dostepne Rosliny"
+                size_hint: 1, 0.05
+                
+                color: 0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0
+                font_name: "font.ttf"
+                font_size: 20
+                
+            GridLayout:
+                padding: 10
+                cols: 3
+                hint_size: 1, 0.5
+                id: add_plants_layout
+                
+
+
+
+
+
+                
+
+            

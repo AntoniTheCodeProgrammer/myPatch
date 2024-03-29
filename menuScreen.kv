@@ -1,0 +1,64 @@
+
+<MenuScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.42, 0.55, 0.45, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 20
+        padding: 20
+
+        Header:
+            size_hint: 1, 1
+            Label:
+                text: "Menu"
+                size_hint: 1, 1
+                color: 1, 1, 1, 1
+                font_name: "font.ttf"
+                font_size: 36
+
+        RoundedButton:
+            text: 'Ekran Glowny'
+            color: 0.55, 0.36, 0.29, 1 
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.5
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_press: root.go_to_main_screen(self)
+        
+        RoundedButton:
+            text: 'Twoje rosliny'
+            color: 0.55, 0.36, 0.29, 1 
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.5
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_press: root.go_to_flower_screen(self)
+
+        RoundedButton:
+            text: 'Dodaj rosliny'
+            color: 0.55, 0.36, 0.29, 1 
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.5
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_press: root.go_to_addflower_screen(self)    
+
+        RoundedButton:
+            text: 'Log out'
+            color: 0.55, 0.36, 0.29, 1 
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.5
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_press: root.go_to_opening_screen(self)
+
+        

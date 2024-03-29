@@ -1,0 +1,87 @@
+<RoundedButtonSubmit@Button>:
+    background_color: 0,0,0,0
+    canvas.before:
+        Color:
+            rgba: (0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0 )
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [20,]
+
+# <RoundedTextInput@TextInput>:
+#     background_color: 0,0,0,0
+#     canvas.before:
+#         Color:
+#             rgba: (1, 0.9607843137254902, 0.9058823529411765, 1)
+#         RoundedRectangle:
+#             pos: self.pos
+#             size: self.size
+#             radius: [20,]
+
+<LoginScreen>:
+    canvas.before:
+        Color:
+            rgba: root.bg_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 20
+        padding: 20
+
+        Label:
+            text: 'Zaloguj sie!'
+            font_size: 32
+            font_name: "font.ttf"
+            size_hint: 1, 1
+
+        TextInput:
+            id: inputLogin
+
+            background_color: 1, 0.9607843137254902, 0.9058823529411765, 1
+            foreground_color: 0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0 
+            
+            hint_text: "Login"
+            padding_y: 20, 20
+            hint_text_color: 0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            multiline: False
+
+        TextInput:
+            id: inputPassword
+
+            background_color: 1, 0.9607843137254902, 0.9058823529411765, 1
+            foreground_color: 0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0
+
+            
+            hint_text: "Haslo"
+            padding_y: 20, 20
+            hint_text_color: 0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            multiline: False
+            password: True
+
+        Label:
+            id: response
+            size_hint: 1, 0.1
+            color: 0.5529411764705883, 0.3568627450980392, 0.2980392156862745, 1.0
+            font_name: "font.ttf"
+            font_size: 16
+
+        RoundedButtonSubmit:
+            text: 'Zaloguj'
+            color: 1, 1, 1, 1 
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_press: root.check_login(self)

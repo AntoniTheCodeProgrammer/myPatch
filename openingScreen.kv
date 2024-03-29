@@ -1,0 +1,57 @@
+<RoundedButton@Button>:
+    background_color: 0,0,0,0
+    canvas.before:
+        Color:
+            rgba: (0.96, 0.84, 0.73, 1)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [20,]
+
+<OpeningScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.42, 0.55, 0.45, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 20
+        padding: 20
+
+        Image:
+            size_hint: 1, 2
+
+            source: 'photos/icon.png'
+
+        Label:
+            size_hint: 1, 0.5
+            text: "Witaj"
+            font_name: "font.ttf"
+            font_size: 32
+            color: 1, 1, 1, 1
+
+        RoundedButton:
+            text: 'Zaloguj'
+            color: 0.55, 0.36, 0.29, 1 
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_press: root.go_to_login_screen(self)
+
+        RoundedButton:
+            text: 'Zarejestruj'
+            color: 0.55, 0.36, 0.29, 1 
+            font_name: "font.ttf"
+
+            size_hint: 0.7, 0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_press: root.go_to_register_screen(self)
+        
+        Widget:
+            size_hint: 1, 0.5
