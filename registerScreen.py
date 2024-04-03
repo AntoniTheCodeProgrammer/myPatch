@@ -32,7 +32,7 @@ class RegisterScreen(Screen):
         id += 1
         
         if row:
-            print("Istnieje użytkownik o podanym loginie.")
+            self.ids.response.text = "Istnieje uzytkownik o podanym loginie."
         else:
             query = 'INSERT INTO users(id, imie, nazwisko, login, haslo, level) VALUES("'+str(id)+'","'+self.name+'", "'+self.surname+'", "'+self.login+'", "'+self.password+'", 1)'
             print("Executing query:", query)
