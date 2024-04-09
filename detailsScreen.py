@@ -38,8 +38,8 @@ class DetailsScreen(Screen):
         conn.commit()
         conn.close()
         
-    def go_to_main_screen(self, instance):
-        self.manager.current = 'main_screen'
+    def go_to_addflower_screen(self, instance):
+        self.manager.current = 'addflower_screen'
         
     def go_to_menu_screen(self, instance):
         self.manager.current = 'menu_screen'
@@ -89,7 +89,7 @@ class DetailsScreen(Screen):
                         background_color=(0.55, 0.8, 0.6, 1)
                         )
             
-        button.bind(on_press=self.go_to_main_screen)
+        button.bind(on_press=self.go_to_addflower_screen)
         button2.bind(on_press=lambda x, plant_id=flower[0]: self.addPlant(plant_id))
         
         button_layout.add_widget(button)
